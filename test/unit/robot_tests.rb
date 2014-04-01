@@ -33,4 +33,15 @@ class RobotTests < Test::Unit::TestCase
     robot.place(5, 0, :north)
     assert_not_nil(!robot.is_initialized?)
   end
+
+  def test_placement_with_all_valid_positions
+    robot = Robot.new
+
+    0.upto(4) do |x|
+      0.upto(4) do |y|
+        robot.place(x, y, :north)
+        assert_not_nil(robot.is_initialized?)
+      end
+    end
+  end
 end
