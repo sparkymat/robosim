@@ -34,6 +34,8 @@ class Robot
 
   def turn_left # or anti-clockwise
     direction_index = DIRECTIONS.index(@direction)
+    return if direction_index.nil?
+
     direction_index -= 1
     direction_index %= DIRECTIONS.length # looping back to north
 
@@ -42,6 +44,8 @@ class Robot
 
   def turn_right # or clockwise
     direction_index = DIRECTIONS.index(@direction)
+    return if direction_index.nil?
+    
     direction_index += 1
     direction_index %= DIRECTIONS.length # looping back to north
 
